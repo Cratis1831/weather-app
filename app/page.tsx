@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   const fetchGeoCode = async () => {
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&limit=5&appid=${process.env.NEXT_PUBLIC_WEATHER_API}`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&limit=5&appid=${process.env.NEXT_PUBLIC_WEATHER_API}`;
     try {
       const res = await fetch(url, { method: "GET", next: { revalidate: 10 } });
       if (!res.ok) {
